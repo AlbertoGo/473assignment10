@@ -13,9 +13,9 @@
     </header>
 
     <main ng-controller="main">
-      <form class='comment-input' ng-submit="addComment()">
+      <form class='comment-input' ng-submit="addCommentFromInputBox()">
         <p>Add Your Comment:</p>
-        <input type="text" ng-model="comment"><button>+</button>
+        <input type="text" ng-model="commentInput"><button>+</button>
       </form>
 
       <section class='comments' ng-repeat="entry in comments">
