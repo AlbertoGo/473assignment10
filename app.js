@@ -1,6 +1,24 @@
 var main = function () {
     "use strict";
 
+    //initialize module
+    var app = angular.module('myApp',[]);
+
+    //Define controller attacked to main view
+    app.controller("main", function($scope){
+        //initialize view models
+        $scope.comment = "";
+        $scope.comments = ["This is the first comment!", "Here's the second one!", "And this is one more.", "Here is another one!"];
+
+        //Define method
+        $scope.addComment = function(){
+            if($scope.comment !== ""){
+                $scope.comments.push($scope.comment);
+                $scope.comment = "";
+            }
+        };
+    });
+    /*
     var addCommentFromInputBox = function () {
         var $new_comment;
 
@@ -21,7 +39,7 @@ var main = function () {
         if (event.keyCode === 13) {
             addCommentFromInputBox();
         }
-    });
+    }); */
 };
 
 $(document).ready(main);

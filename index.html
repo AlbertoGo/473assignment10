@@ -6,23 +6,20 @@
     <link href='style.css' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body ng-app="myApp">
     <header>
       <h1>Comments</h1>
       <p>A simple app that allows a user to input comments</p>
     </header>
 
-    <main>
-      <section class='comment-input'>
+    <main ng-controller="main">
+      <form class='comment-input' ng-submit="addComment()">
         <p>Add Your Comment:</p>
-        <input><button>+</button>
-      </section>
+        <input type="text" ng-model="comment"><button>+</button>
+      </form>
 
-      <section class='comments'>
-        <p>This is the first comment!</p>
-        <p>Here's the second one!</p>
-        <p>And this is one more.</p>
-        <p>Here is another one!</p>
+      <section class='comments' ng-repeat="entry in comments">
+        <p>{{entry}}</p>
       </section>
     </main>
 
@@ -32,5 +29,6 @@
 
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="app.js"></script>
+    <script src="angular.min.js"></script>
   </body>
 </html>
